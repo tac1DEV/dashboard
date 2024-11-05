@@ -23,8 +23,6 @@ h1,h2{
 }
 
 ul{
-    display: flex;
-    gap: 10px;
     h1{
         font-size: 1.3em;
     }
@@ -32,24 +30,65 @@ ul{
         font-size: 4em;
     }
     h3{
+        font-size: 1.5em;
         font-weight: normal;
     }
     span{
         font-size: 2.5em;
     }
+    li{
+        width: 100%;
+    }
     article{
-        margin: 10px;
-        padding: 10px;
+        margin: 0.7em;
+        padding: 0.7em;
         border-radius: 0.5em;
         background-color: var(--secondary-color);
         min-height: 20vh;
         div{
             display:flex;
             align-items: baseline;
+            gap: 10px;
         }
         li{
-            border-bottom: 1px solid white;
-            margin: 10px auto;
+            border-bottom: 1px solid #42456A;
+            padding: 0.7em 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h2{
+                font-size: 1.3em;
+                font-weight: normal;
+            }
         }
     }
+}
+
+.warning{
+    background-color: rgba(176,73,96,0.1);
+    border: 1px solid #C64F64;
+    border-radius: 0.3em;
+    padding: 0 0.3em;
+    position: relative;
+    &::after {
+        content: url('./icons/exclamation.svg');
+        display: inline-block;
+        width: 2.5em;
+        height: 2.5em;
+        position: absolute;
+        bottom: -0.5em;
+        right: -0.75em;
+    }
+}
+
+.block{
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.mainStat{
+    gap:0;
+}
+.chart-container{
+    height: 66%;
 }

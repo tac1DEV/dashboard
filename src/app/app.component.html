@@ -3,84 +3,153 @@
     <li>
       <article>
         <h1>Sessions</h1>
-        <div>
+        <div class="mainStat">
           <h2>26.9</h2>
           <span>K</span>
         </div>
         <h3>past 7 days</h3>
-        <p>https://apexcharts.com/angular-chart-demos/line-charts/basic/</p>
+        <div class="chart-container">
+          <canvas id="MyChart">{{ chart }}</canvas>
+        </div>
       </article>
     <article>
       <h1>by medium</h1>
-      <li>organic</li>
-      <li>(none)</li>
-      <li>cpc</li>
-      <li>refferal</li>
-      <li>p_social</li>
+      <ul>
+      <li>
+        <h2>organic</h2>
+        <h3>17.3K</h3>
+      </li>
+      <li>
+        <h2>(none)</h2>
+        <h3>6,603</h3>
+      </li>
+      <li>
+        <h2>cpc</h2>
+        <h3>1,333</h3>
+      </li>
+      <li>
+        <h2>refferal</h2>
+        <h3>1,009</h3>
+      </li>
+      <li>
+        <h2>p_social</h2>
+        <h3>89</h3>
+      </li>
+    </ul>
     </article>
   </li>
 </ul>
 <ul>
   <li>
     <article>
-      <h1>Sessions</h1>
-      <div>
-        <h2>26.9</h2>
-        <span>K</span>
+      <h1>Conversions</h1>
+      <div class="mainStat">
+        <h2>229</h2>
       </div>
       <h3>past 7 days</h3>
-      <p>https://apexcharts.com/angular-chart-demos/line-charts/basic/</p>
+      <div class="chart-container">
+        <canvas id="MyChart2">{{ chart }}</canvas>
+      </div>
     </article>
   <article>
     <h1>by medium</h1>
-    <li>organic</li>
-    <li>(none)</li>
-    <li>cpc</li>
-    <li>refferal</li>
-    <li>p_social</li>
+    <ul>
+    <li>
+      <h2>organic</h2>
+      <h3>17.3K</h3>
+    </li>
+    <li>
+      <h2>(none)</h2>
+      <h3>6,603</h3>
+    </li>
+    <li>
+      <h2>cpc</h2>
+      <h3>1,333</h3>
+    </li>
+    <li>
+      <h2>refferal</h2>
+      <h3>1,009</h3>
+    </li>
+    <li>
+      <h2>p_social</h2>
+      <h3>89</h3>
+    </li>
+  </ul>
   </article>
 </li>
 </ul>
 <ul>
   <li>
     <article>
-      <h1>Sessions</h1>
-      <div>
-        <h2>26.9</h2>
+      <h1>Google Ads</h1>
+      <div class="mainStat">
+        <span>$</span>
+        <h2>2.6</h2>
         <span>K</span>
       </div>
-      <h3>past 7 days</h3>
-      <p>https://apexcharts.com/angular-chart-demos/line-charts/basic/</p>
+      <h3>budget spent</h3>
+      <div class="chart-container">
+        <canvas id="MyChart3">{{ chart }}</canvas>
+      </div>
+      <div>
+        <h2>49</h2>
+        <h3>conversions</h3>
+      </div>
+      <div>
+        <span>$</span>
+        <h2>53.3</h2>
+        <h3>per conv</h3>
+      </div>
     </article>
-  <article>
-    <h1>by medium</h1>
-    <li>organic</li>
-    <li>(none)</li>
-    <li>cpc</li>
-    <li>refferal</li>
-    <li>p_social</li>
-  </article>
+    <article>
+      <div class="mainStat">
+        <h2>1,333</h2>
+      </div>
+      <h3>sessions</h3>
+      <div class="mainStat">
+        <span>$</span>
+        <h2>2.0</h2>
+      </div>
+      <h3>cpc</h3>
+    </article>
 </li>
 </ul>
 <ul>
   <li>
     <article>
-      <h1>Sessions</h1>
-      <div>
-        <h2>26.9</h2>
+      <h1>Facebook</h1>
+      <div class="mainStat">
+        <span>$</span>
+        <h2>2</h2>
         <span>K</span>
       </div>
-      <h3>past 7 days</h3>
-      <p>https://apexcharts.com/angular-chart-demos/line-charts/basic/</p>
+      <h3>budget spent</h3>
+      <div class="chart-container">
+        <canvas id="MyChart4">{{ chart }}</canvas>
+      </div>
+      <div>
+        <h2>3</h2>
+        <h3>conversions</h3>
+      </div>
+      <div class="warning">
+        <span>$</span>
+        <h2>678.3</h2>
+        <h3>per conv</h3>
+      </div>
     </article>
-  <article>
-    <h1>by medium</h1>
-    <li>organic</li>
-    <li>(none)</li>
-    <li>cpc</li>
-    <li>refferal</li>
-    <li>p_social</li>
-  </article>
+    <article>
+      <div class="block">
+        <h2>87</h2>
+        <h3>sessions</h3>
+      </div>
+      <div class="warning">
+      <div>
+        <span>$</span>
+        <h2>23.4</h2>
+      </div>
+      <h3>cpc</h3>
+      </div>
+    </article>
 </li>
 </ul>
 </div>
