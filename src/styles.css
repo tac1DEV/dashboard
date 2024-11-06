@@ -128,8 +128,8 @@ ul{
 
 .mat-mdc-progress-bar{
     --mdc-linear-progress-track-height: 0.75em !important;
-    --mdc-linear-progress-track-color: #var(--progress);
-    --mdc-linear-progress-active-indicator-color:#var(--progress);
+    --mdc-linear-progress-track-color: var(--progress);
+    --mdc-linear-progress-active-indicator-color:var(--progress);
     --mdc-linear-progress-active-indicator-height: 0.75em !important;
     border-radius: 1em;
     overflow: hidden;
@@ -139,6 +139,6 @@ ul{
 }
 
 .percentage{
-    color: #var(--progress);
+    color: var(--progress);
 }
 
