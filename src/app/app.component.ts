@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Chart, registerables } from 'chart.js';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { debounceTime, fromEvent, Subject, takeUntil } from 'rxjs';
 
 Chart.register(...registerables);
 @Component({
@@ -12,7 +13,28 @@ Chart.register(...registerables);
   styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy{
+  private destroy$ = new Subject<void>();
+
+  constructor(){
+    fromEvent(window, 'resize')
+      .pipe(
+        debounceTime(200),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => {
+        const width = window.innerWidth;  // Récupère la largeur de la fenêtre
+        console.log('Window width:', width);
+        if(window.innerWidth<1350){
+          this.chart.resize();
+          this.chart2.resize();
+        }else{
+          this.chart.resize(500, 500);
+          this.chart2.resize(500, 500);
+        }
+      });
+  }
+
   public config: any = {
     type: 'line',
     data: {
@@ -170,5 +192,9 @@ export class AppComponent implements OnInit{
   ngOnInit():void{
     this.chart = new Chart('MyChart', this.config);
     this.chart2 = new Chart('MyChart2', this.config2);
+  }
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

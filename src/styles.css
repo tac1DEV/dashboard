@@ -143,3 +143,37 @@ ul{
     color: var(--progress);
 }
 
+
+@media (min-width: 1350px) {
+    
+#grille{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: start;
+}
+
+ul{
+li{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    & > article:nth-child(2) {
+        min-height: 35vh;
+      }
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    min-height: 55vh;
+
+    ul{
+        margin-bottom: 2em;
+        li{
+            flex-direction:row;
+        }
+    }
+}
+}
+}
