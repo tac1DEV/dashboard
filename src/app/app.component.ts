@@ -23,9 +23,8 @@ export class AppComponent implements OnInit, OnDestroy{
         takeUntil(this.destroy$)
       )
       .subscribe(() => {
-        const width = window.innerWidth;  // Récupère la largeur de la fenêtre
-        console.log('Window width:', width);
-        if(window.innerWidth<1350){
+        const width = window.innerWidth;
+        if(width<1350){
           this.chart.resize();
           this.chart2.resize();
         }else{
