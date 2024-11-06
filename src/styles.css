@@ -30,6 +30,7 @@ h1,h2{
 }
 
 ul{
+    display: block;
     h1{
         font-size: 1.3em;
     }

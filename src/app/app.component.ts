@@ -27,11 +27,11 @@ export class AppComponent implements OnInit{
         {
           label: 'past 28 days',
           data: [
-            5450, 5250, 4260, 2450, 2800, 5400, 5250,
-            5050, 4500, 2250, 2500, 5480, 5600, 4250,
-            3900, 2250, 2500, 5250, 5400, 5250, 5100,
-            4250, 2500, 2450, 2425, 2400, 4950, 5050
-          ],
+            5420, 3350, 4830, 5520, 4250, 3100, 3050,
+            5000, 4700, 3200, 4000, 5350, 5500, 3750,
+            3000, 3450, 3600, 5290, 4600, 4400, 3750,
+            2750, 5580, 4950, 3050, 3900, 3850, 5390
+        ],
           fill: false,
           borderWidth: 4,
           borderColor: 'rgb(6,209,255)',
@@ -43,11 +43,88 @@ export class AppComponent implements OnInit{
           label: 'prev 28 days',
           color:'#FFF',
           data: [
-            5350, 5000, 4260, 2200, 2800, 5550, 5250,
-            5250, 4600, 2250, 2400, 5480, 5400, 4150,
-            3850, 2300, 2550, 5200, 5300, 5250, 5200,
-            4400, 2400, 2350, 2425, 2400, 5500, 5350
-          ],
+            4600, 3300, 5100, 5400, 4000, 2800, 3200,
+            4700, 2200, 4200, 5000, 3300, 4100, 5200,
+            3800, 3900, 3600, 4800, 5300, 4600, 4400,
+            4800, 3700, 3000, 5300, 5100, 4500, 4200
+        ],
+          fill: false,
+          borderWidth: 4,
+          borderColor: 'rgb(228,200,82)',
+          backgroundColor: 'rgb(228,200,82)',
+          tension: 0.1,
+          pointRadius: 2,
+        },
+      ]
+    },
+    options: {
+      plugins: {
+        legend: {
+            labels: {
+                color: "white",
+            },
+        },
+      },
+      maintainAspectRatio: true,
+      aspectRatio: 9/6,
+      scales:{
+        x:{
+          grid:{
+            display: false,
+            color: "transparent"
+          },
+          ticks:{
+            color: "white"
+          }
+        },
+        y:{
+          grid:{
+            color: "#404268"
+          },
+          ticks:{
+            color: "white"
+          }
+        }
+      },
+    },
+  };
+  public config2: any = {
+    type: 'line',
+    data: {
+      labels:[
+        "7 Nov", "8 Nov", "9 Nov", "10 Nov", "11 Nov", "12 Nov", "13 Nov",
+        "14 Nov","15 Nov", "16 Nov", "17 Nov","18 Nov", "19 Nov", "20 Nov",
+        "21 Nov", "22 Nov", "23 Nov", "24 Nov", "25 Nov", "26 Nov", "27 Nov",
+        "28 Nov","29 Nov", "30 Nov", "1 Dec", "2 Dec", "3 Dec", "4 Dec", "5 Dec"
+    ]
+    ,
+      datasets: [
+        {
+          label: 'past 28 days',
+          data: [
+            112, 105, 98, 87, 99, 90, 82,
+            95, 91, 84, 97, 88, 100, 94,
+            80, 85, 92, 98, 104, 110, 103,
+            102, 109, 101, 93, 106, 89, 107
+        ]
+        ,
+          fill: false,
+          borderWidth: 4,
+          borderColor: 'rgb(6,209,255)',
+          backgroundColor: 'rgb(6,209,255)',
+          tension: 0.1,
+          pointRadius: 2,
+        },
+        {
+          label: 'prev 28 days',
+          color:'#FFF',
+          data: [
+            105, 100, 93, 95, 97, 92, 87, 
+            104, 90, 86, 88, 101, 102, 92, 
+            98, 92, 106, 111, 103, 108, 99, 
+            91, 110, 97, 104, 96, 105, 100
+        ]
+        ,
           fill: false,
           borderWidth: 4,
           borderColor: 'rgb(228,200,82)',
@@ -92,6 +169,6 @@ export class AppComponent implements OnInit{
   chart2: any;
   ngOnInit():void{
     this.chart = new Chart('MyChart', this.config);
-    this.chart2 = new Chart('MyChart2', this.config);
+    this.chart2 = new Chart('MyChart2', this.config2);
   }
 }
