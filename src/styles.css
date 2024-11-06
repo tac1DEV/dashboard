@@ -144,7 +144,7 @@ ul{
 }
 
 
-@media (max-width: 1350px) {
+@media (min-width: 1350px) {
     
 #grille{
     display: grid;
