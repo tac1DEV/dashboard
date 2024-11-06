@@ -31,6 +31,7 @@ h1,h2{
 
 ul{
     display: block;
+    min-width: 20vw;
     h1{
         font-size: 1.3em;
     }
