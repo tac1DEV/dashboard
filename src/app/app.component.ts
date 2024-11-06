@@ -1,14 +1,13 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HighchartsChartModule } from 'highcharts-angular';
-import * as Highcharts from 'highcharts';
-import { Chart, Colors, registerables } from 'chart.js';
+import { Chart, registerables } from 'chart.js';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 Chart.register(...registerables);
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatProgressBarModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -60,13 +59,14 @@ export class AppComponent implements OnInit{
     },
     options: {
       plugins: {
-      legend: {
-          labels: {
-              color: "white",
-          },
+        legend: {
+            labels: {
+                color: "white",
+            },
+        },
       },
-  },
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
+      aspectRatio: 9/6,
       scales:{
         x:{
           grid:{
@@ -90,12 +90,8 @@ export class AppComponent implements OnInit{
   };
   chart: any;
   chart2: any;
-  chart3: any;
-  chart4: any;
   ngOnInit():void{
     this.chart = new Chart('MyChart', this.config);
     this.chart2 = new Chart('MyChart2', this.config);
-    this.chart3 = new Chart('MyChart3', this.config);
-    this.chart4 = new Chart('MyChart4', this.config);
   }
 }

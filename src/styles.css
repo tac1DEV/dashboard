@@ -1,16 +1,19 @@
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
-
 *{
     margin: 0;
     padding: 0;
     list-style-type: none;
+    font-family: sans-serif;
 }
 
 html{
     --main-color: rgb(22,16,58);
     --secondary-color: rgb(39,41,83);
     --text: rgb(255,255,255);
+    --light-gray: #BFC9DE;
+    --gray-1: #42456A;
+    --gray-2: #46476E;
+    --warning: #C64F64;
+    --progress: #02d1ff;
 }
 
 body{
@@ -20,6 +23,10 @@ body{
 
 h1,h2{
     font-weight: 700;
+}
+
+.chart-container{
+    margin-top: 1em;
 }
 
 ul{
@@ -40,6 +47,9 @@ ul{
         width: 100%;
     }
     article{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
         margin: 0.7em;
         padding: 0.7em;
         border-radius: 0.5em;
@@ -50,15 +60,41 @@ ul{
             align-items: baseline;
             gap: 10px;
         }
+        ul{
+            margin-bottom: 2em;
+        }
         li{
-            border-bottom: 1px solid #42456A;
+            border-bottom: 1px solid var(--gray-1);
             padding: 0.7em 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            h2{
-                font-size: 1.3em;
+            h2,h3{
+                font-size: 1em;
                 font-weight: normal;
+            }
+        }
+        .progressBar{
+            display:block;
+            position: relative;
+            margin: 1em 0;
+        }
+        .bar{
+            display:flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+            h2{
+                font-size:1em;
+            }
+            span, h3{
+                font-size: 0.75em;
+            }
+            div{
+                color:#BFC9DE;
+                display:flex;
+                align-items: baseline;
+                gap:0;
             }
         }
     }
@@ -66,7 +102,7 @@ ul{
 
 .warning{
     background-color: rgba(176,73,96,0.1);
-    border: 1px solid #C64F64;
+    border: 1px solid var(--warning);
     border-radius: 0.3em;
     padding: 0 0.3em;
     position: relative;
@@ -89,6 +125,20 @@ ul{
 .mainStat{
     gap:0;
 }
-.chart-container{
-    height: 66%;
+
+.mat-mdc-progress-bar{
+    --mdc-linear-progress-track-height: 0.75em !important;
+    --mdc-linear-progress-track-color: #var(--progress);
+    --mdc-linear-progress-active-indicator-color:#var(--progress);
+    --mdc-linear-progress-active-indicator-height: 0.75em !important;
+    border-radius: 1em;
+    overflow: hidden;
 }
+.mat-mdc-progress-bar{
+    background-color: var(--gray-2);
+}
+
+.percentage{
+    color: #var(--progress);
+}
+
