@@ -28,8 +28,8 @@ export class AppComponent implements OnInit, OnDestroy{
           this.chart.resize();
           this.chart2.resize();
         }else{
-          this.chart.resize(400, 400);
-          this.chart2.resize(400, 400);
+          this.chart.resize(350, 350);
+          this.chart2.resize(350, 350);
         }
       });
   }
